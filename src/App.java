@@ -86,24 +86,16 @@ public class App {
                 
                 //Si choca con un borde, rebota invirtiendo la velocidad en ese eje
                 if((x<=1 && vx<0) || (x>=ancho && vx>0)){
-                    if (vx<0) {
-                        x=2;
-                    }else {
-                        x=ancho-1;
-                    }
+                    x=(vx<0)?2:ancho-1;
                     vx*=-1;
                 }
                 if((y<=1 && vy<0) || (y>=alto && vy>0)){
-                    if (vy<0) {
-                        y=2;
-                    }else {
-                        y=ancho-1;
-                    }
+                    y=(vy<0)?2:alto-1;
                     vy*=-1;
                 }
             }
 
-            Thread.sleep(100);
+            Thread.sleep(500);
             System.out.print(CLEAN_SCREEN);
         } while (!salir);
 
